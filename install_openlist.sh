@@ -16,10 +16,10 @@ if [ "$(basename "$(pwd)")" == "public_nodejs" ]; then
     # 判断是否有所需文件
     files=("app.js" "start.sh" "package.json" "web.js")
     urls=(
-        "https://raw.githubusercontent.com/jinnan11/serv00-alist/main/alist/app.js"
-        "https://raw.githubusercontent.com/jinnan11/serv00-alist/main/alist/start.sh"
-        "https://raw.githubusercontent.com/jinnan11/serv00-alist/main/alist/package.json"
-        "https://github.com/AlistGo/alist/releases/latest/download/alist-freebsd-amd64.tar.gz"
+        "https://raw.githubusercontent.com/misakano7545/serv00-openlist/main/alist/app.js"
+        "https://raw.githubusercontent.com/misakano7545/serv00-openlist/main/alist/start.sh"
+        "https://raw.githubusercontent.com/misakano7545/serv00-openlist/main/alist/package.json"
+        "https://github.com/OpenListTeam/OpenList/releases/latest/download/openlist-freebsd-amd64.tar.gz"
     )
 
     for i in "${!files[@]}"; do
@@ -29,10 +29,10 @@ if [ "$(basename "$(pwd)")" == "public_nodejs" ]; then
     done
 
     # 判断是否存在 alist 文件
-    if [ -f "alist-freebsd-amd64.tar.gz" ]; then
+    if [ -f "openlist-freebsd-amd64.tar.gz" ]; then
         # 如果存在，执行以下操作
-        tar -xzf alist-freebsd-amd64.tar.gz
-        rm alist-freebsd-amd64.tar.gz
+        tar -xzf openlist-freebsd-amd64.tar.gz
+        rm openlist-freebsd-amd64.tar.gz
         rm -rf temp
         mv alist web.js
         chmod +x web.js
