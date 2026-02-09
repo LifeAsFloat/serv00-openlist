@@ -16,9 +16,9 @@ if [ "$(basename "$(pwd)")" == "public_nodejs" ]; then
     # 判断是否有所需文件
     files=("app.js" "start.sh" "package.json" "web.js")
     urls=(
-        "https://github.com/LifeAsFloat/serv00-openlist/blob/main/openlist/app.js"
-        "https://github.com/LifeAsFloat/serv00-openlist/blob/main/openlist/start.sh"
-        "https://github.com/LifeAsFloat/serv00-openlist/blob/main/openlist/package.json"
+        "https://raw.githubusercontent.com/LifeAsFloat/serv00-openlist/main/openlist/app.js"
+        "https://raw.githubusercontent.com/LifeAsFloat/serv00-openlist/main/openlist/start.sh"
+        "https://raw.githubusercontent.com/LifeAsFloat/serv00-openlist/main/openlist/package.json"
         "https://github.com/OpenListTeam/OpenList/releases/latest/download/openlist-freebsd-amd64.tar.gz"
     )
 
