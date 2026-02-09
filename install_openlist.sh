@@ -1,6 +1,6 @@
 # 作者: 槿南11
 # 主页：https://jinnan.top
-# GitHub：https://github.com/jinnan11/serv00-alist
+# GitHub：https://github.com/jinnan11/serv00-openlist
 # 版权所有，请勿删除
 
 # 清屏
@@ -11,14 +11,14 @@ if [ "$(basename "$(pwd)")" == "public_nodejs" ]; then
     # 删除残留文件，如果不存在则跳过
     [ -f public/index.html ] && rm public/index.html
     [ -f start.sh ] && rm start.sh
-    [ -f alist ] && rm alist
+    [ -f openlist ] && rm openlist
     
     # 判断是否有所需文件
     files=("app.js" "start.sh" "package.json" "web.js")
     urls=(
-        "https://raw.githubusercontent.com/misakano7545/serv00-openlist/main/alist/app.js"
-        "https://raw.githubusercontent.com/misakano7545/serv00-openlist/main/alist/start.sh"
-        "https://raw.githubusercontent.com/misakano7545/serv00-openlist/main/alist/package.json"
+        "https://github.com/LifeAsFloat/serv00-openlist/main/openlist/app.js"
+        "https://github.com/LifeAsFloat/serv00-openlist/main/openlist/start.sh"
+        "https://github.com/LifeAsFloat/serv00-openlist/main/openlist/package.json"
         "https://github.com/OpenListTeam/OpenList/releases/latest/download/openlist-freebsd-amd64.tar.gz"
     )
 
@@ -28,13 +28,13 @@ if [ "$(basename "$(pwd)")" == "public_nodejs" ]; then
         fi
     done
 
-    # 判断是否存在 alist 文件
+    # 判断是否存在 openlist 文件
     if [ -f "openlist-freebsd-amd64.tar.gz" ]; then
         # 如果存在，执行以下操作
         tar -xzf openlist-freebsd-amd64.tar.gz
         rm openlist-freebsd-amd64.tar.gz
         rm -rf temp
-        mv alist web.js
+        mv openlist web.js
         chmod +x web.js
         ./web.js server
     fi
@@ -45,9 +45,8 @@ if [ "$(basename "$(pwd)")" == "public_nodejs" ]; then
         clear
 
         # 如果存在，显示安装完成信息
-        echo -e "已成功安装 Alist！\n"
-        echo -e "请在 File manager 中，编辑 app.js 和 data/config.json\n"
-        echo -e "作者：https://jinnan.top\nQQ群：244184124 欢迎加入交流~\n"
+        echo -e "已成功安装 openlist！\n"
+        echo -e "请在 File manager 中，编辑 app.js 和 data/config.json\n"   
         
     else
         # 使您能够运行自己的软件

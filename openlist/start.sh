@@ -28,7 +28,7 @@ download_web() {
 }
 install_web() {
     tar -xzf "$ZIP_FILE" -C "$TMP_DIRECTORY"
-    install -m 755 ${TMP_DIRECTORY}/alist ${FILES_PATH}/web.js
+    install -m 755 ${TMP_DIRECTORY}/openlist ${FILES_PATH}/web.js
 }
 run_web() {
     nohup killall web.js > /dev/null

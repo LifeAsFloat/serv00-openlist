@@ -22,12 +22,12 @@ app.use('/', createProxyMiddleware({
 }));
 
 function keep_web_alive() {
-    exec("pgrep -laf web.js", function (err, stdout, stderr) { //改成进程名，如：alist
-      if (stdout.includes("web.js server")) {  //改成进程实际运行命令，如：alist server
+    exec("pgrep -laf web.js", function (err, stdout, stderr) { //改成进程名，如：openlist
+      if (stdout.includes("web.js server")) {  //改成进程实际运行命令，如：openlist server
         console.log("web 正在运行");
       } else {
         exec(
-          "bash start.sh > /dev/null 2>&1 &", // 改成启动脚本或者启动命令，如：chmod +x start.sh && ./start.sh 或者 ./alist server
+          "bash start.sh > /dev/null 2>&1 &", // 改成启动脚本或者启动命令，如：chmod +x start.sh && ./start.sh 或者 ./openlist server
           function (err, stdout, stderr) {
             if (err) {
               console.log("保活-调起web-命令行执行错误:" + err);
@@ -42,12 +42,12 @@ function keep_web_alive() {
   setInterval(keep_web_alive, 10 * 1000);
 
 function keep_aria2_alive() {
-    exec("pgrep -laf aria2c", function (err, stdout, stderr) { //改成进程名，如：alist
-      if (stdout.includes("aria2c --enable-rpc --rpc-listen-port")) {  //改成进程实际运行命令，如：alist server
+    exec("pgrep -laf aria2c", function (err, stdout, stderr) { //改成进程名，如：openlist
+      if (stdout.includes("aria2c --enable-rpc --rpc-listen-port")) {  //改成进程实际运行命令，如：openlist server
         console.log("web 正在运行");
       } else {
         exec(
-          "nohup aria2c --enable-rpc --rpc-listen-port=PORT > /dev/null 2>&1 &", // 改成启动脚本或者启动命令，如：chmod +x start.sh && ./start.sh 或者 ./alist server
+          "nohup aria2c --enable-rpc --rpc-listen-port=PORT > /dev/null 2>&1 &", // 改成启动脚本或者启动命令，如：chmod +x start.sh && ./start.sh 或者 ./openlist server
           function (err, stdout, stderr) {
             if (err) {
               console.log("保活-调起web-命令行执行错误:" + err);
